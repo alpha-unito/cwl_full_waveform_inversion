@@ -1,0 +1,6 @@
+devito==4.8.11
+matplotlib==3.9.2
+numpy==2.0.2
+pytest==8.3.3
+scipy==1.14.1
+streamflow@git+https://github.com/alpha-unito/streamflow@a15474b1391f43a6004135164ac37cd135fd0755

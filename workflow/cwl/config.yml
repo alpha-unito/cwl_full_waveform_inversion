@@ -1,0 +1,45 @@
+nshots: 336
+nreceivers: 101
+fwi_iterations: 5
+
+num_threads: 1
+nshards: 8
+devito_language: "openmp"
+devito_platform: "cpu64"
+
+init_script: 
+  class: File 
+  path: scripts/init.py 
+  secondaryFiles:
+    - class: File
+      path: scripts/utils.py
+receivers_script: 
+  class: File 
+  path: scripts/receivers.py 
+  secondaryFiles:
+    - class: File
+      path: scripts/utils.py
+split_script: 
+  class: File 
+  path: scripts/split.py 
+  secondaryFiles:
+    - class: File
+      path: scripts/utils.py
+compute_residual_script: 
+  class: File 
+  path: scripts/compute_residual.py 
+  secondaryFiles:
+    - class: File
+      path: scripts/utils.py
+reduce_script: 
+  class: File 
+  path: scripts/reduce.py 
+  secondaryFiles:
+    - class: File
+      path: scripts/utils.py
+update_script:
+  class: File 
+  path: scripts/update_with_box.py
+  secondaryFiles:
+    - class: File
+      path: scripts/utils.py
